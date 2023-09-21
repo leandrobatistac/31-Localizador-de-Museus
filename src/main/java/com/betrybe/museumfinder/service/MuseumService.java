@@ -7,6 +7,9 @@ import com.betrybe.museumfinder.model.Museum;
 import com.betrybe.museumfinder.util.CoordinateUtil;
 import org.springframework.stereotype.Service;
 
+/**
+ * Javadoc.
+ */
 @Service
 public class MuseumService implements MuseumServiceInterface {
   private final MuseumFakeDatabase museumFakeDatabase;
@@ -23,7 +26,7 @@ public class MuseumService implements MuseumServiceInterface {
   @Override
   public Museum createMuseum(Museum museum) {
     Coordinate coordinate = museum.getCoordinate();
-    if (!CoordinateUtil.isCoordinateValid(coordinate)){
+    if (!CoordinateUtil.isCoordinateValid(coordinate)) {
       throw new InvalidCoordinateException();
     }
     return museumFakeDatabase.saveMuseum(museum);
