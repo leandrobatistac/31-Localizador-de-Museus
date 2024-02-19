@@ -7,12 +7,16 @@ import com.betrybe.museumfinder.model.Coordinate;
 import com.betrybe.museumfinder.service.MuseumService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest
+@AutoConfigureMockMvc
 public class MuseumServiceTest {
 
   private final MuseumFakeDatabase museumFakeDatabase = Mockito.mock(MuseumFakeDatabase.class);
